@@ -1,46 +1,39 @@
-# Astro Starter Kit: Basics
+# Sistema de Gestión de Contratación CAS - UGEL Talara
 
-```sh
-npm create astro@latest -- --template basics
-```
+![Estado](https://img.shields.io/badge/Estado-Finalizado-blue)
+![Tecnologías](https://img.shields.io/badge/Stack-React%20%7C%20Node.js%20%7C%20MySQL-brightgreen)
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+Proyecto de innovación desarrollado para la optimización y digitalización del proceso de contratación bajo el régimen **CAS (Contratación Administrativa de Servicios)** en la UGEL Talara.
 
-## 🚀 Project Structure
+## 📝 Descripción
+El sistema automatiza el flujo de reclutamiento y selección, permitiendo a los postulantes gestionar sus expedientes de manera digital y facilitando a Recursos Humanos la revisión, calificación y seguimiento de los procesos.
 
-Inside of your Astro project, you'll see the following folders and files:
+## 🚀 Características Principales
+
+- **Gestión de Postulantes:** Registro, inicio de sesión y gestión de perfil personal.
+- **Carga de Documentación:** Subida segura de CV y anexos obligatorios (formato PDF).
+- **Seguimiento de Expedientes:** Visualización del estado del proceso (Enviado, En Revisión, Registrado, Rechazado).
+- **Panel Administrativo:** Control total de convocatorias y calificación de postulantes por parte de RR.HH.
+- **Validación de Datos:** Restricciones de formato para asegurar la integridad de la información.
+
+## 🛠️ Stack Tecnológico
+
+- **Frontend:** React.js
+- **Backend:** Node.js
+- **Base de Datos:** MySQL
+- **Arquitectura:** Modelo-Vista-Controlador (MVC)
+
+## 📋 Especificaciones Técnicas (Anexos)
+
+- **Formatos de Archivo:** PDF únicamente para documentos; JPG/PNG para fotos.
+- **Tamaño Máximo:** 10 MB por archivo.
+- **Campos Obligatorios:** Validación estricta de datos personales, académicos y laborales.
+
+## 🏗️ Estructura del Proyecto
 
 ```text
 /
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
-```
-
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+├── client/        # Interfaz de usuario (React)
+├── server/        # API y lógica de negocio (Node.js)
+├── database/      # Scripts y migraciones (MySQL)
+└── docs/          # Documentación técnica adicional
