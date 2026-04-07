@@ -145,6 +145,13 @@ const aiSkills = [
     gap: 1.25rem;
   }
 
+  @media (max-width: 768px) {
+    .skills-grid {
+      grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+      gap: 1rem;
+    }
+  }
+
   .skill-card {
     display: flex;
     flex-direction: column;
@@ -197,13 +204,38 @@ const aiSkills = [
     font-size: 1.5rem;
   }
 
-  @media (max-width: 992px) {
+  @media (max-width: 1024px) {
+    .skills-wrapper {
+      gap: 2rem;
+    }
+  }
+
+  @media (max-width: 768px) {
     .skills-wrapper {
       grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    .skills-category h3 {
+      font-size: 1.3rem;
+      justify-content: center;
     }
 
     .ai-skills-list {
       height: auto;
+      padding: 1.5rem;
+    }
+
+    .ai-skills-list li {
+      font-size: 1rem;
+    }
+
+    .skill-card {
+      padding: 1rem 0.5rem;
+    }
+
+    .skill-card i {
+      font-size: 2rem;
     }
   }
 </style>

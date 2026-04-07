@@ -11,14 +11,10 @@
         class="contact-info animate-fade-in"
         style="max-width: 800px; margin: 0 auto; text-align: center;"
       >
-        <h3
-          style="font-size: 2.5rem; margin-bottom: 1.5rem; color: var(--color-text);"
-        >
+        <h3 class="contact-subtitle">
           Hablemos sobre tu próximo proyecto
         </h3>
-        <p
-          style="color: var(--color-text-muted); font-size: 1.2rem; margin-bottom: 3rem;"
-        >
+        <p class="contact-description">
           Si estás buscando un desarrollador FullStack enfocado en soluciones de
           impacto o te interesa integrar inteligencia artificial a tus procesos,
           ¡no dudes en escribirme!
@@ -78,43 +74,26 @@
     padding: 2rem 0;
   }
 
-  .method-item {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-    padding: 1.5rem;
-    border-radius: var(--border-radius-md);
-    transition:
-      transform var(--transition-fast),
-      border-color var(--transition-fast);
-    min-width: 250px;
-  }
-
-  a.method-item:hover {
-    transform: translateY(-5px);
-    border-color: var(--color-primary);
-  }
-
-  .method-item i {
-    font-size: 2rem;
-    color: var(--color-primary);
-    background: rgba(59, 130, 246, 0.1);
-    padding: 1rem;
-    border-radius: 50%;
-  }
-
-  .method-item h4 {
-    font-size: 1.1rem;
-    margin-bottom: 0.25rem;
+  .contact-subtitle {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
     color: var(--color-text);
   }
 
-  .method-item span {
+  .contact-description {
     color: var(--color-text-muted);
-    font-size: 0.95rem;
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
   }
 
   @media (max-width: 768px) {
+    .contact-subtitle {
+      font-size: 1.75rem;
+    }
+    .contact-description {
+      font-size: 1rem;
+      margin-bottom: 2rem;
+    }
     .contact-wrapper .contact-methods {
       flex-direction: column !important;
       align-items: center;

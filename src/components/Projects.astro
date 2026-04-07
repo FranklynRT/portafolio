@@ -239,7 +239,7 @@ const projects = [
         if (galleryData.length === 0) return;
 
         slider.innerHTML = galleryData
-          .map((src) => {
+          .map((src: string) => {
             const isVideo = src.toLowerCase().endsWith(".mp4");
             return `
               <div class="slider-slide">
@@ -309,8 +309,15 @@ const projects = [
 
   .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 3rem;
+  }
+
+  @media (max-width: 768px) {
+    .projects-grid {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
   }
 
   .project-card {
@@ -333,11 +340,17 @@ const projects = [
 
   .project-image-container {
     width: 100%;
-    height: 280px;
+    height: 250px;
     background: #0f172a;
     position: relative;
     overflow: hidden;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  @media (max-width: 768px) {
+    .project-image-container {
+      height: 200px;
+    }
   }
 
   .image-wrapper {
@@ -582,6 +595,13 @@ const projects = [
     align-items: center;
   }
 
+  @media (max-width: 768px) {
+    .slider-container {
+      height: auto;
+      max-height: 80vh;
+    }
+  }
+
   :global(.slider-slide) {
     flex: 0 0 100%;
     width: 100%;
@@ -614,9 +634,9 @@ const projects = [
 
   .close-modal {
     position: absolute;
-    top: 2rem;
-    right: 2rem;
-    font-size: 3rem;
+    top: 1.5rem;
+    right: 1.5rem;
+    font-size: 2.5rem;
     color: white;
     cursor: pointer;
     transition: transform 0.3s;
@@ -662,12 +682,26 @@ const projects = [
   }
 
   @media (max-width: 768px) {
-    .projects-grid {
-      grid-template-columns: 1fr;
+    .modal-content {
+      height: 80vh;
+      width: 100%;
     }
 
-    .modal-content {
-      height: 60vh;
+    .close-modal {
+      top: 1rem;
+      right: 1rem;
+      font-size: 2rem;
+    }
+
+    .nav-btn {
+      width: 40px;
+      height: 40px;
+      font-size: 1.5rem;
+    }
+
+    :global(.modal.is-mobile-view .slider-img) {
+      max-width: 280px;
+      border-width: 5px;
     }
   }
 </style>

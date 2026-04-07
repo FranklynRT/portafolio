@@ -36,6 +36,12 @@ const currentYear = new Date().getFullYear();
     border-top: 1px solid rgba(255, 255, 255, 0.05);
   }
 
+  @media (max-width: 768px) {
+    .footer {
+      padding: 2rem 0;
+    }
+  }
+
   .footer-container {
     display: flex;
     flex-direction: column;
@@ -78,5 +84,6 @@ const currentYear = new Date().getFullYear();
     color: var(--color-text-muted);
     font-size: 0.9rem;
     text-align: center;
+    padding: 0 1rem;
   }
 </style>
