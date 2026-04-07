@@ -1,39 +1,42 @@
-# Sistema de Gestión de Contratación CAS - UGEL Talara
+# Franklyn.dev - Portfolio Personal 🚀
 
-![Estado](https://img.shields.io/badge/Estado-Finalizado-blue)
-![Tecnologías](https://img.shields.io/badge/Stack-React%20%7C%20Node.js%20%7C%20MySQL-brightgreen)
+![Astro](https://img.shields.io/badge/Astro-BC52EE?style=for-the-badge&logo=astro&logoColor=white)
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
 
-Proyecto de innovación desarrollado para la optimización y digitalización del proceso de contratación bajo el régimen **CAS (Contratación Administrativa de Servicios)** en la UGEL Talara.
+Este es el repositorio oficial de mi portafolio profesional, un espacio donde presento mi trayectoria como **FullStack Developer** e **Ingeniero de Software con IA**, detallando mis habilidades, proyectos y experiencia técnica.
 
-## 📝 Descripción
-El sistema automatiza el flujo de reclutamiento y selección, permitiendo a los postulantes gestionar sus expedientes de manera digital y facilitando a Recursos Humanos la revisión, calificación y seguimiento de los procesos.
+## 🌐 Demo
+Puedes ver el portafolio en vivo aquí: [Franklyn.dev](https://franklyn-dev.vercel.app/) *(o tu enlace de despliegue)*
 
-## 🚀 Características Principales
+## 🛠️ Tecnologías Utilizadas
 
-- **Gestión de Postulantes:** Registro, inicio de sesión y gestión de perfil personal.
-- **Carga de Documentación:** Subida segura de CV y anexos obligatorios (formato PDF).
-- **Seguimiento de Expedientes:** Visualización del estado del proceso (Enviado, En Revisión, Registrado, Rechazado).
-- **Panel Administrativo:** Control total de convocatorias y calificación de postulantes por parte de RR.HH.
-- **Validación de Datos:** Restricciones de formato para asegurar la integridad de la información.
+El portafolio ha sido desarrollado utilizando un stack moderno enfocado en el rendimiento (performance) y la experiencia de usuario:
 
-## 🛠️ Stack Tecnológico
+- **Framework:** [Astro](https://astro.build/) (para un rendimiento ultrarrápido y arquitectura de islas).
+- **Frontend:** React & TypeScript.
+- **Estilos:** Tailwind CSS.
+- **Iconos:** Tabler Icons / Lucide React.
+- **Despliegue:** Vercel / Netlify.
 
-- **Frontend:** React.js
-- **Backend:** Node.js
-- **Base de Datos:** MySQL
-- **Arquitectura:** Modelo-Vista-Controlador (MVC)
+## ✨ Secciones del Sitio
 
-## 📋 Especificaciones Técnicas (Anexos)
+- **Sobre Mí:** Resumen de mi enfoque en desarrollo web robusto, código limpio y pasión por la IA.
+- **Habilidades:** Mi arsenal tecnológico categorizado por Frontend, Mobile, Backend e IA.
+- **Proyectos Destacados:** - **Sistema CAS UGEL Talara:** Gestión de convocatorias públicas (React/Node).
+    - **API Reconocimiento Facial:** Control de asistencia biométrico (Python/OpenCV).
+    - **App de Pedidos:** Ecosistema móvil de delivery (Flutter/Dart).
+- **Contacto:** Canales de comunicación directa.
 
-- **Formatos de Archivo:** PDF únicamente para documentos; JPG/PNG para fotos.
-- **Tamaño Máximo:** 10 MB por archivo.
-- **Campos Obligatorios:** Validación estricta de datos personales, académicos y laborales.
+## 👨‍💻 Perfil del Desarrollador
 
-## 🏗️ Estructura del Proyecto
-
-```text
-/
-├── client/        # Interfaz de usuario (React)
-├── server/        # API y lógica de negocio (Node.js)
-├── database/      # Scripts y migraciones (MySQL)
-└── docs/          # Documentación técnica adicional
+```typescript
+const developer = {
+  name: "Franklyn Jaren",
+  roles: ["FullStack", "AI Tech"],
+  education: "Senati",
+  passion: true,
+  buildMagic() {
+    return "Awesome Web Apps";
+  }
+};
