@@ -1,0 +1,127 @@
+---
+
+---
+
+<section id="contact" class="section contact-section">
+  <div class="container">
+    <h2 class="section-title">Contáctame</h2>
+
+    <div class="contact-wrapper">
+      <div
+        class="contact-info animate-fade-in"
+        style="max-width: 800px; margin: 0 auto; text-align: center;"
+      >
+        <h3
+          style="font-size: 2.5rem; margin-bottom: 1.5rem; color: var(--color-text);"
+        >
+          Hablemos sobre tu próximo proyecto
+        </h3>
+        <p
+          style="color: var(--color-text-muted); font-size: 1.2rem; margin-bottom: 3rem;"
+        >
+          Si estás buscando un desarrollador FullStack enfocado en soluciones de
+          impacto o te interesa integrar inteligencia artificial a tus procesos,
+          ¡no dudes en escribirme!
+        </p>
+
+        <div
+          class="contact-methods"
+          style="display: flex; flex-direction: row; flex-wrap: wrap; justify-content: center; gap: 1.5rem;"
+        >
+          <a
+            href="mailto:franklyndev20@gmail.com"
+            class="method-item glass-panel"
+          >
+            <i class="bx bx-envelope"></i>
+            <div style="text-align: left;">
+              <h4>Email</h4>
+              <span>franklyndev20@gmail.com</span>
+            </div>
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/franklyn-ramirez-tinedo-88489b350/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="method-item glass-panel"
+          >
+            <i class="bx bxl-linkedin"></i>
+            <div style="text-align: left;">
+              <h4>LinkedIn</h4>
+              <span>Franklyn Ramirez</span>
+            </div>
+          </a>
+
+          <div class="method-item glass-panel">
+            <i class="bx bx-map"></i>
+            <div style="text-align: left;">
+              <h4>Ubicación</h4>
+              <span>Perú</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .contact-section {
+    background: linear-gradient(
+      0deg,
+      var(--color-bg) 0%,
+      var(--color-bg-secondary) 100%
+    );
+  }
+
+  .contact-wrapper {
+    padding: 2rem 0;
+  }
+
+  .method-item {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    border-radius: var(--border-radius-md);
+    transition:
+      transform var(--transition-fast),
+      border-color var(--transition-fast);
+    min-width: 250px;
+  }
+
+  a.method-item:hover {
+    transform: translateY(-5px);
+    border-color: var(--color-primary);
+  }
+
+  .method-item i {
+    font-size: 2rem;
+    color: var(--color-primary);
+    background: rgba(59, 130, 246, 0.1);
+    padding: 1rem;
+    border-radius: 50%;
+  }
+
+  .method-item h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+    color: var(--color-text);
+  }
+
+  .method-item span {
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+  }
+
+  @media (max-width: 768px) {
+    .contact-wrapper .contact-methods {
+      flex-direction: column !important;
+      align-items: center;
+    }
+    .method-item {
+      width: 100%;
+      max-width: 400px;
+    }
+  }
+</style>

@@ -1,0 +1,288 @@
+---
+
+---
+
+<section id="home" class="hero-section">
+  <!-- Interactive Background Particles (CSS based) -->
+  <div class="particles">
+    <div class="particle p1"></div>
+    <div class="particle p2"></div>
+    <div class="particle p3"></div>
+  </div>
+
+  <div class="container hero-container">
+    <div class="hero-content animate-fade-in">
+      <span class="greeting">Hola Mundo, soy</span>
+      <h1 class="name">
+        Franklyn Jaren <span class="text-gradient">Ramirez Tinedo</span>
+      </h1>
+
+      <div class="roles">
+        <h2 class="role typing-effect">FullStack Developer</h2>
+        <span class="separator">|</span>
+        <h2 class="role">Tecnico en Ingenieria de Software y IA</h2>
+      </div>
+
+      <p class="description">
+        Egresado de Senati. Especializado en crear soluciones web robustas.
+        Apasionado por el código limpio y las tecnologías modernas.
+      </p>
+
+      <div class="cta-group">
+        <a href="#projects" class="btn btn-primary">
+          Ver Proyectos <i class="bx bx-right-arrow-alt"></i>
+        </a>
+        <a
+          href="https://github.com/FranklynRT"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-outline"
+        >
+          <i class="bx bxl-github"></i> GitHub
+        </a>
+        <a
+          href="https://www.linkedin.com/in/franklyn-ramirez-tinedo-88489b350/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-outline"
+        >
+          <i class="bx bxl-linkedin-square"></i> LinkedIn
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-visual animate-fade-in delay-200">
+      <div class="code-editor glass-panel floating">
+        <div class="editor-header">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+          <span class="file-name">franklyn.ts</span>
+        </div>
+        <div class="editor-body">
+          <pre><code><span class="keyword">const</span> <span class="variable">developer</span> = {"{"}
+  <span class="property">name</span>: <span class="string">"Franklyn Jaren"</span>,
+  <span class="property">roles</span>: [<span class="string">"FullStack"</span>, <span class="string">"AI Tech"</span>],
+  <span class="property">education</span>: <span class="string">"Senati"</span>,
+  <span class="property">passion</span>: <span class="boolean">true</span>,
+  <span class="method">buildMagic</span>() {"{"}
+    <span class="keyword">return</span> <span class="string">"Awesome Web Apps"</span>;
+  {"}"}
+{"}"};
+
+<span class="variable">developer</span>.<span class="method">buildMagic</span>();</code></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-top: 5rem;
+    overflow: hidden;
+  }
+
+  .particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+  }
+
+  .particle {
+    position: absolute;
+    border-radius: 50%;
+    background: var(--color-primary-glow);
+    filter: blur(60px);
+  }
+
+  .p1 {
+    top: 20%;
+    left: 10%;
+    width: 300px;
+    height: 300px;
+    background: rgba(59, 130, 246, 0.2);
+    animation: drift 15s infinite alternate ease-in-out;
+  }
+  .p2 {
+    bottom: 10%;
+    right: 10%;
+    width: 400px;
+    height: 400px;
+    background: rgba(139, 92, 246, 0.2);
+    animation: drift 20s infinite alternate-reverse ease-in-out;
+  }
+  .p3 {
+    top: 40%;
+    left: 50%;
+    width: 250px;
+    height: 250px;
+    background: rgba(6, 182, 212, 0.15);
+    animation: drift 18s infinite alternate ease-in-out;
+  }
+
+  @keyframes drift {
+    0% {
+      transform: translate(0, 0);
+    }
+    100% {
+      transform: translate(50px, -50px);
+    }
+  }
+
+  .hero-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .greeting {
+    display: inline-block;
+    font-family: var(--font-mono);
+    color: var(--color-accent);
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+  }
+
+  .name {
+    font-size: 4rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: -1px;
+  }
+
+  .roles {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .role {
+    font-size: 1.5rem;
+    color: var(--color-text-muted);
+    font-weight: 500;
+  }
+
+  .separator {
+    color: rgba(255, 255, 255, 0.2);
+  }
+
+  .description {
+    font-size: 1.1rem;
+    color: var(--color-text-muted);
+    max-width: 500px;
+    margin-bottom: 2.5rem;
+  }
+
+  .cta-group {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  /* Code Editor Visual */
+  .editor-header {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 0.75rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+  }
+
+  .red {
+    background: #ff5f56;
+  }
+  .yellow {
+    background: #ffbd2e;
+  }
+  .green {
+    background: #27c93f;
+  }
+
+  .file-name {
+    margin-left: auto;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+  }
+
+  .editor-body {
+    padding: 1.5rem;
+    overflow-x: auto;
+  }
+
+  pre {
+    margin: 0;
+  }
+  code {
+    font-family: var(--font-mono);
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  /* Syntax Highlighting */
+  code {
+    color: #e2e8f0;
+  } /* Default */
+  .keyword {
+    color: #ff7b72;
+  } /* const, return */
+  .variable {
+    color: #79c0ff;
+  } /* developer */
+  .property {
+    color: #a5d6ff;
+  } /* name, roles */
+  .string {
+    color: #a5d6ff;
+  } /* "string" */
+  .boolean {
+    color: #79c0ff;
+  } /* true */
+  .method {
+    color: #d2a8ff;
+  } /* buildMagic */
+
+  @media (max-width: 992px) {
+    .hero-container {
+      grid-template-columns: 1fr;
+      text-align: center;
+      gap: 3rem;
+    }
+
+    .name {
+      font-size: 3rem;
+    }
+    .roles {
+      justify-content: center;
+    }
+    .description {
+      margin: 0 auto 2.5rem auto;
+    }
+    .cta-group {
+      justify-content: center;
+    }
+
+    .hero-visual {
+      max-width: 500px;
+      margin: 0 auto;
+    }
+  }
+</style>

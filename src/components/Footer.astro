@@ -1,0 +1,82 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <div class="container footer-container">
+    <div class="footer-logo">
+      <span class="logo-bracket">{`{`}</span>
+      Franklyn<span class="logo-accent">.dev</span>
+      <span class="logo-bracket">{`}`}</span>
+    </div>
+
+    <div class="footer-socials">
+      <a
+        href="https://github.com/FranklynRT"
+        target="_blank"
+        rel="noopener noreferrer"><i class="bx bxl-github"></i></a
+      >
+      <a
+        href="https://www.linkedin.com/in/franklyn-ramirez-tinedo-88489b350/"
+        target="_blank"
+        rel="noopener noreferrer"><i class="bx bxl-linkedin"></i></a
+      >
+    </div>
+
+    <div class="footer-copyright">
+      &copy; {currentYear} Franklyn Ramirez. Todos los derechos reservados.
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background: var(--color-bg);
+    padding: 3rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .footer-logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-family: var(--font-mono);
+  }
+
+  .logo-bracket {
+    color: var(--color-text-muted);
+  }
+  .logo-accent {
+    color: var(--color-primary);
+  }
+
+  .footer-socials {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .footer-socials a {
+    font-size: 1.5rem;
+    color: var(--color-text-muted);
+    transition:
+      color var(--transition-fast),
+      transform var(--transition-fast);
+  }
+
+  .footer-socials a:hover {
+    color: var(--color-primary);
+    transform: translateY(-3px);
+  }
+
+  .footer-copyright {
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    text-align: center;
+  }
+</style>

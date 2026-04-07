@@ -1,0 +1,248 @@
+---
+import profilePhoto from '../img/foto-perfil.png';
+---
+
+<section id="about" class="section about-section">
+  <div class="container">
+    <h2 class="section-title">Sobre Mí</h2>
+
+    <div class="about-grid">
+      <div class="about-image-container glass-panel">
+        <img
+          src={profilePhoto.src}
+          alt="Franklyn Ramirez"
+          class="profile-photo"
+        />
+        <div class="experience-badge">
+          <span class="number">100%</span>
+          <span class="text">Pasión por<br />el Código</span>
+        </div>
+      </div>
+
+      <div class="about-content">
+        <h3 class="about-subtitle">
+          Full Stack Developer | <span class="text-gradient"
+            >Ingeniero de Software (Técnico)</span
+          >
+        </h3>
+
+        <p class="about-text" style="font-style: italic;">
+          "Transformo ideas complejas en experiencias digitales fluidas, rápidas
+          y escalables."
+        </p>
+
+        <p class="about-text">
+          Mi enfoque combina el desarrollo móvil de alto impacto con
+          arquitecturas web modernas. Me apasiona crear software que no solo
+          funcione, sino que cuente con una base sólida, código limpio y una
+          experiencia de usuario impecable. Soy un entusiasta de la <strong
+            >Inteligencia Artificial</strong
+          > aplicada al desarrollo y un firme creyente en el aprendizaje autodidacta
+          constante.
+        </p>
+
+        <h4
+          style="margin-top: 2rem; font-size: 1.3rem; margin-bottom: -1rem; color: var(--color-text);"
+        >
+          🚀 Mi Arsenal Tecnológico
+        </h4>
+        <div class="features-list">
+          <div class="feature-item">
+            <div class="feature-icon"><i class="bx bx-window-alt"></i></div>
+            <div class="feature-text">
+              <h4>Frontend</h4>
+              <p>React, Astro, TypeScript y Tailwind CSS.</p>
+            </div>
+          </div>
+
+          <div class="feature-item">
+            <div class="feature-icon"><i class="bx bx-mobile-alt"></i></div>
+            <div class="feature-text">
+              <h4>Mobile</h4>
+              <p>Flutter y Dart para apps de alto rendimiento.</p>
+            </div>
+          </div>
+
+          <div class="feature-item">
+            <div class="feature-icon"><i class="bx bx-server"></i></div>
+            <div class="feature-text">
+              <h4>Backend</h4>
+              <p>Node.js, PHP, Python, Java y APIs REST.</p>
+            </div>
+          </div>
+
+          <div class="feature-item">
+            <div class="feature-icon"><i class="bx bx-data"></i></div>
+            <div class="feature-text">
+              <h4>Data & DevOps</h4>
+              <p>MySQL, SQL Server, Firebase, Git y GitHub.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about-section {
+    position: relative;
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .about-image-container {
+    position: relative;
+    border-radius: var(--border-radius-lg);
+    padding: 0.5rem;
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(145deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.01) 100%);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .about-image-container::before {
+    content: '';
+    position: absolute;
+    inset: -15px;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+    filter: blur(35px);
+    opacity: 0.2;
+    border-radius: inherit;
+    z-index: -1;
+    transition: opacity 0.5s ease;
+  }
+
+  .about-image-container:hover::before {
+    opacity: 0.5;
+  }
+
+  .profile-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: calc(var(--border-radius-lg) - 0.5rem);
+    background: var(--color-bg-secondary);
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), filter 0.5s ease;
+    filter: grayscale(15%) contrast(1.05);
+  }
+
+  .about-image-container:hover .profile-photo {
+    transform: scale(1.03) translateY(-5px);
+    filter: grayscale(0%) contrast(1.1);
+  }
+
+  .experience-badge {
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    background: linear-gradient(
+      135deg,
+      var(--color-primary),
+      var(--color-accent)
+    );
+    padding: 1.5rem;
+    border-radius: var(--border-radius-md);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    animation: floatBadge 6s ease-in-out infinite;
+    z-index: 10;
+  }
+
+  @keyframes floatBadge {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+  }
+
+  .experience-badge .number {
+    display: block;
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 1;
+    color: white;
+  }
+
+  .experience-badge .text {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .about-subtitle {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .about-text {
+    color: var(--color-text-muted);
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+  }
+
+  .about-text strong {
+    color: var(--color-text);
+  }
+
+  .features-list {
+    margin-top: 2.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .feature-item {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+  }
+
+  .feature-icon {
+    background: rgba(59, 130, 246, 0.1);
+    color: var(--color-primary);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+  }
+
+  .feature-text h4 {
+    font-size: 1.2rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .feature-text p {
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+  }
+
+  @media (max-width: 992px) {
+    .about-grid {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    .about-image-container {
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .features-list {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

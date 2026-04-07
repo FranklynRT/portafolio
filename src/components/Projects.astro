@@ -1,0 +1,673 @@
+---
+import { Image } from "astro:assets";
+
+// Mobile Images
+import imgMenuPrincipal from "../img/movil_img/Menu_Principal.jpeg";
+import video_menu_principal from "../img/movil_img/video_menu_principal.mp4";
+
+// CAS Images
+import imgCasMain from "../img/contratacion-cas/image.png";
+import imgCasCopy from "../img/contratacion-cas/image copy.png";
+import imgCasCopy2 from "../img/contratacion-cas/image copy 2.png";
+import imgCasCopy3 from "../img/contratacion-cas/image copy 3.png";
+import imgCasCopy4 from "../img/contratacion-cas/image copy 4.png";
+import imgCasCopy5 from "../img/contratacion-cas/image copy 5.png";
+import imgCasCopy6 from "../img/contratacion-cas/image copy 6.png";
+import imgCasCopy7 from "../img/contratacion-cas/image copy 7.png";
+import imgCasCopy8 from "../img/contratacion-cas/image copy 8.png";
+import imgCasCopy9 from "../img/contratacion-cas/image copy 9.png";
+import imgCasCopy10 from "../img/contratacion-cas/image copy 10.png";
+import imgCasCopy11 from "../img/contratacion-cas/image copy 11.png";
+import imgCasCopy12 from "../img/contratacion-cas/image copy 12.png";
+import imgCasCopy13 from "../img/contratacion-cas/image copy 13.png";
+import imgCasCopy14 from "../img/contratacion-cas/image copy 14.png";
+import imgCasCopy15 from "../img/contratacion-cas/image copy 15.png";
+
+// Reconocimiento Images
+import imgReconocimiento from "../img/reconocimiento/image.png";
+
+const projects = [
+  {
+    title: "Sistema de Gestión de Contratación Cas de Ugel Talara",
+    description:
+      "Plataforma web para la gestión integral de convocatorias CAS, permitiendo la postulación digital, evaluación de expedientes en tiempo real y administración centralizada de procesos de contratación pública.",
+    image: imgCasMain,
+    gallery: [
+      imgCasMain,
+      imgCasCopy,
+      imgCasCopy2,
+      imgCasCopy3,
+      imgCasCopy4,
+      imgCasCopy5,
+      imgCasCopy6,
+      imgCasCopy7,
+      imgCasCopy8,
+      imgCasCopy9,
+      imgCasCopy10,
+      imgCasCopy11,
+      imgCasCopy12,
+      imgCasCopy13,
+      imgCasCopy14,
+      imgCasCopy15,
+    ],
+    tags: [
+      "React",
+      "Node.js",
+      "MySQL",
+      "TailwindCSS",
+      "GeroUI",
+      "API REST",
+      "OpenAI",
+    ],
+    github: "https://github.com/FranklynRT/Ugel-Talara.git",
+    demo: "#",
+  },
+  {
+    title: "API de Reconocimiento de Rostros",
+    description:
+      "Sistema inteligente de reconocimiento facial para el control de asistencia laboral, con registro automatizado de jornadas, análisis de puntualidad en tiempo real y panel administrativo para la gestión de talento humano",
+    image: imgReconocimiento,
+    gallery: [imgReconocimiento],
+    tags: ["Python", "OpenCV", "MySQL"],
+    github: "https://github.com/FranklynRT/Api_rostro_reconocimiento.git",
+  },
+  {
+    title: "App Movil de Pedidos de Comida",
+    description:
+      "Ecosistema móvil de pedidos de comida que integra un catálogo dinámico de productos, gestión avanzada de carrito de compras, motor de favoritos y un panel de administración integral para el control de inventario y operaciones.",
+    image: imgMenuPrincipal,
+    isMobile: true,
+    gallery: [video_menu_principal],
+    tags: ["Flutter", "Dart", "Node.js"],
+    github: "https://github.com/FranklynRT/Menu_Ya_App_movil.git",
+    demo: "#",
+  },
+];
+---
+
+<section id="projects" class="section projects-section">
+  <div class="container">
+    <h2 class="section-title reveal">Proyectos Destacados</h2>
+
+    <div class="projects-grid">
+      {
+        projects.map((project, index) => (
+          <div
+            class={`project-card glass-panel reveal reveal-delay-${(index % 3) + 1}`}
+          >
+            <div class="project-image-container">
+              {project.image ? (
+                <div class="image-wrapper">
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    class="main-project-image"
+                  />
+                  {project.isMobile && (
+                    <div class="mobile-badge">
+                      <i class="bx bx-mobile-alt" /> Mobile App
+                    </div>
+                  )}
+                </div>
+              ) : (
+                <div class="image-placeholder">
+                  <i class="bx bx-laptop" />
+                </div>
+              )}
+
+              {project.gallery && (
+                <div class="mini-gallery no-scrollbar">
+                  {project.gallery.map((item) => {
+                    const isVideo = typeof item === 'string' && item.toLowerCase().endsWith('.mp4');
+                    // Handle imported objects which have a .src property
+                    const src = typeof item === 'string' ? item : item.src;
+                    const finalIsVideo = isVideo || src.toLowerCase().endsWith('.mp4');
+                    
+                    return (
+                      <div class="mini-thumb">
+                        {finalIsVideo ? (
+                          <div class="video-placeholder thumb-img">
+                            <i class="bx bx-play-circle" />
+                          </div>
+                        ) : (
+                          <Image
+                            src={item as any}
+                            alt="Thumbnail"
+                            width={100}
+                            height={100}
+                            class="thumb-img"
+                          />
+                        )}
+                      </div>
+                    );
+                  })}
+                </div>
+              )}
+            </div>
+
+            <div class="project-content">
+              <h3 class="project-title">{project.title}</h3>
+              <p class="project-description">{project.description}</p>
+
+              <div class="project-tags">
+                {project.tags.map((tag) => (
+                  <span class="tag">{tag}</span>
+                ))}
+              </div>
+
+              <div class="project-links">
+                <a
+                  href={project.github}
+                  class="project-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i class="bx bxl-github" /> Código
+                </a>
+                {project.title !== "API de Reconocimiento de Rostros" &&
+                  project.gallery &&
+                  project.gallery.length > 0 && (
+                    <button
+                      class="project-link primary demo-trigger"
+                      data-is-mobile={!!project.isMobile}
+                      data-gallery={JSON.stringify(
+                        project.gallery.map((g) =>
+                          typeof g === "string" ? g : g.src,
+                        ),
+                      )}
+                    >
+                      <i class="bx bx-play-circle" /> Ver Demo
+                    </button>
+                  )}
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+
+  <!-- Fullscreen Gallery Modal -->
+  <div id="gallery-modal" class="modal">
+    <span class="close-modal">&times;</span>
+    <div class="modal-content">
+      <div id="modal-slider" class="slider-container no-scrollbar">
+        <!-- Images injected via JS -->
+      </div>
+      <div class="slider-nav">
+        <button id="prev-btn" class="nav-btn"
+          ><i class="bx bx-chevron-left"></i></button
+        >
+        <button id="next-btn" class="nav-btn"
+          ><i class="bx bx-chevron-right"></i></button
+        >
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Scroll Reveal Logic
+  const observerOptions = {
+    threshold: 0.1,
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("active");
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
+
+  // Modal Gallery Logic
+  const modal = document.getElementById("gallery-modal");
+  const slider = document.getElementById("modal-slider");
+  const closeBtn = document.querySelector(".close-modal");
+  const prevBtn = document.getElementById("prev-btn");
+  const nextBtn = document.getElementById("next-btn");
+
+  if (modal && slider && closeBtn && prevBtn && nextBtn) {
+    document.querySelectorAll(".demo-trigger").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const galleryData = JSON.parse(
+          btn.getAttribute("data-gallery") || "[]",
+        );
+        const isMobile = btn.getAttribute("data-is-mobile") === "true";
+        if (galleryData.length === 0) return;
+
+        slider.innerHTML = galleryData
+          .map((src) => {
+            const isVideo = src.toLowerCase().endsWith(".mp4");
+            return `
+              <div class="slider-slide">
+                ${
+                  isVideo
+                    ? `<video src="${src}" class="slider-img" autoplay loop muted playsinline controls></video>`
+                    : `<img src="${src}" class="slider-img" />`
+                }
+              </div>
+            `;
+          })
+          .join("");
+
+        if (galleryData.length <= 1) {
+          prevBtn.style.display = "none";
+          nextBtn.style.display = "none";
+        } else {
+          prevBtn.style.display = "flex";
+          nextBtn.style.display = "flex";
+        }
+
+        if (isMobile) {
+          modal.classList.add("is-mobile-view");
+        } else {
+          modal.classList.remove("is-mobile-view");
+        }
+
+        modal.classList.add("is-visible");
+        setTimeout(() => {
+          modal.classList.add("is-open");
+        }, 10);
+        document.body.style.overflow = "hidden";
+      });
+    });
+
+    const closeModal = () => {
+      modal.classList.remove("is-open");
+      setTimeout(() => {
+        modal.classList.remove("is-visible");
+        document.body.style.overflow = "auto";
+      }, 400);
+    };
+
+    closeBtn.addEventListener("click", closeModal);
+
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) {
+        closeModal();
+      }
+    });
+
+    prevBtn.addEventListener("click", () => {
+      slider.scrollBy({ left: -slider.clientWidth, behavior: "smooth" });
+    });
+
+    nextBtn.addEventListener("click", () => {
+      slider.scrollBy({ left: slider.clientWidth, behavior: "smooth" });
+    });
+  }
+</script>
+
+<style>
+  .projects-section {
+    position: relative;
+    padding-bottom: 10rem;
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 3rem;
+  }
+
+  .project-card {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition:
+      transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+      box-shadow 0.4s ease;
+    height: 100%;
+  }
+
+  .project-card:hover {
+    transform: translateY(-12px) scale(1.02);
+    box-shadow:
+      0 20px 40px rgba(0, 0, 0, 0.4),
+      0 0 20px var(--color-primary-glow);
+    border-color: var(--color-primary);
+  }
+
+  .project-image-container {
+    width: 100%;
+    height: 280px;
+    background: #0f172a;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .image-wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+
+  .main-project-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+  }
+
+  .project-card:hover .main-project-image {
+    transform: scale(1.1);
+  }
+
+  .mobile-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: var(--color-primary);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  }
+
+  .mini-gallery {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    gap: 0.8rem;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+    overflow-x: auto;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 10;
+  }
+
+  .project-card:hover .mini-gallery {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .mini-thumb {
+    flex: 0 0 auto;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: #1e293b;
+  }
+
+  .mini-thumb:hover {
+    border-color: var(--color-primary);
+    transform: scale(1.1) translateY(-5px);
+    z-index: 20;
+  }
+
+  .thumb-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .video-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.4);
+    font-size: 1.5rem;
+    color: var(--color-primary);
+    aspect-ratio: 9/16;
+  }
+
+  .image-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(
+      45deg,
+      rgba(59, 130, 246, 0.1),
+      rgba(139, 92, 246, 0.1)
+    );
+    font-size: 5rem;
+    color: rgba(255, 255, 255, 0.1);
+  }
+
+  .project-content {
+    padding: 2rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .project-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #fff;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    background: linear-gradient(to right, #fff, var(--color-primary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .project-description {
+    color: var(--color-text-muted);
+    margin-bottom: 2rem;
+    flex-grow: 1;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .tag {
+    background: rgba(59, 130, 246, 0.1);
+    padding: 0.3rem 0.8rem;
+    border-radius: 100px;
+    font-size: 0.75rem;
+    color: var(--color-neon);
+    border: 1px solid rgba(6, 182, 212, 0.2);
+    transition: all 0.3s ease;
+  }
+
+  .project-card:hover .tag {
+    border-color: var(--color-neon);
+    background: rgba(6, 182, 212, 0.15);
+  }
+
+  .project-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: auto;
+  }
+
+  .project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--color-text-muted);
+  }
+
+  .project-link:hover {
+    color: var(--color-primary);
+  }
+
+  .project-link.primary {
+    color: var(--color-primary);
+    background: rgba(59, 130, 246, 0.1);
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius-sm);
+    border: 1px solid rgba(59, 130, 246, 0.3);
+  }
+
+  .project-link.primary:hover {
+    background: var(--color-primary);
+    color: white;
+    box-shadow: 0 0 15px var(--color-primary-glow);
+  }
+
+  /* Modal Styles */
+  .modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(15px);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+
+  .modal.is-visible {
+    display: flex;
+  }
+
+  .modal.is-open {
+    opacity: 1;
+  }
+
+  .modal-content {
+    position: relative;
+    width: 100%;
+    max-width: 100vw;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transform: scale(0.9) translateY(20px);
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  /* Adaptación para proyectos móviles en el modal */
+  .modal.is-mobile-view .modal-content {
+    max-width: 100vw;
+  }
+
+  .modal.is-open .modal-content {
+    transform: scale(1) translateY(0);
+  }
+
+  .slider-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+  }
+
+  :global(.slider-slide) {
+    flex: 0 0 100%;
+    width: 100%;
+    height: 100%;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    scroll-snap-align: center;
+    padding: 0 1rem;
+    box-sizing: border-box;
+  }
+
+  :global(.slider-img) {
+    max-width: 95%;
+    max-height: 95%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 12px;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
+    transition: transform 0.3s ease;
+  }
+
+  :global(.modal.is-mobile-view .slider-img) {
+    max-width: 450px;
+    border-radius: 30px;
+    border: 10px solid #1e293b;
+    background: #000;
+  }
+
+  .close-modal {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    font-size: 3rem;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.3s;
+    z-index: 2100;
+  }
+
+  .close-modal:hover {
+    transform: scale(1.2) rotate(90deg);
+    color: var(--color-primary);
+  }
+
+  .slider-nav {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1rem;
+    pointer-events: none;
+    transform: translateY(-50%);
+  }
+
+  .nav-btn {
+    pointer-events: auto;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+
+  .nav-btn:hover {
+    background: var(--color-primary);
+    transform: scale(1.1);
+  }
+
+  @media (max-width: 768px) {
+    .projects-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .modal-content {
+      height: 60vh;
+    }
+  }
+</style>

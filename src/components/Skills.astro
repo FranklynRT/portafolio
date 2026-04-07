@@ -1,0 +1,209 @@
+---
+const frontendSkills = [
+  { name: "HTML5", icon: "bx bxl-html5", color: "#e34f26" },
+  { name: "CSS3", icon: "bx bxl-css3", color: "#1572b6" },
+  { name: "JavaScript", icon: "bx bxl-javascript", color: "#f7df1e" },
+  { name: "TypeScript", icon: "bx bxl-typescript", color: "#3178c6" },
+  { name: "Tailwind CSS", icon: "bx bxl-tailwind-css", color: "#06b6d4" },
+  { name: "React", icon: "bx bxl-react", color: "#61dafb" },
+  { name: "Astro", icon: "bx bx-rocket", color: "#ff5d01" },
+  { name: "Vite", icon: "bx bx-bolt-circle", color: "#646cff" },
+  { name: "Flutter & Dart", icon: "bx bxl-flutter", color: "#02569b" },
+];
+
+const backendSkills = [
+  { name: "PHP", icon: "bx bxl-php", color: "#777bb4" },
+  { name: "Python", icon: "bx bxl-python", color: "#3776ab" },
+  { name: "Java", icon: "bx bxl-java", color: "#f89820" },
+  { name: "APIs REST", icon: "bx bx-cloud", color: "#00758f" },
+  { name: "Node.js", icon: "bx bxl-nodejs", color: "#339933" },
+  { name: "Android", icon: "bx bxl-android", color: "#3dd45f" },
+];
+
+const toolsAndDB = [
+  { name: "Bases de Datos", icon: "bx bx-data", color: "#00758f" },
+  { name: "MySQL / SQL Server", icon: "bx bx-cylinder", color: "#f29111" },
+  { name: "Firebase", icon: "bx bxl-firebase", color: "#ffca28" },
+  { name: "Git & GitHub", icon: "bx bxl-git", color: "#f05032" },
+  { name: "NPM", icon: "bx bx-package", color: "#cb3837" },
+];
+
+const aiSkills = [
+  "OpenCV",
+  "NumPy & Pandas",
+  "Matplotlib",
+  "Tkinter",
+  "Google Colab",
+];
+---
+
+<section id="skills" class="section skills-section">
+  <div class="container">
+    <h2 class="section-title">Habilidades Técnicas</h2>
+
+    <div class="skills-wrapper">
+      <div class="main-skills">
+        <div class="skills-category">
+          <h3><i class="bx bx-window-alt"></i> Frontend</h3>
+          <div class="skills-grid">
+            {
+              frontendSkills.map((skill) => (
+                <div class="skill-card glass-panel">
+                  <i class={skill.icon} style={`color: ${skill.color}`} />
+                  <span>{skill.name}</span>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+
+        <div class="skills-category mt-4">
+          <h3><i class="bx bx-server"></i> Backend</h3>
+          <div class="skills-grid">
+            {
+              backendSkills.map((skill) => (
+                <div class="skill-card glass-panel">
+                  <i class={skill.icon} style={`color: ${skill.color}`} />
+                  <span>{skill.name}</span>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+
+        <div class="skills-category mt-4">
+          <h3><i class="bx bx-wrench"></i> Programas, BD y Herramientas</h3>
+          <div class="skills-grid">
+            {
+              toolsAndDB.map((skill) => (
+                <div class="skill-card glass-panel">
+                  <i class={skill.icon} style={`color: ${skill.color}`} />
+                  <span>{skill.name}</span>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+      </div>
+
+      <div class="side-skills">
+        <div class="skills-category">
+          <h3><i class="bx bx-brain"></i> Data Science & IA</h3>
+          <div class="ai-skills-list glass-panel">
+            <ul>
+              {
+                aiSkills.map((skill) => (
+                  <li>
+                    <i class="bx bx-check-circle" />
+                    {skill}
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .skills-section {
+    background: linear-gradient(
+      180deg,
+      var(--color-bg) 0%,
+      var(--color-bg-secondary) 100%
+    );
+  }
+
+  .skills-wrapper {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+  }
+
+  .mt-4 {
+    margin-top: 3rem;
+  }
+
+  .skills-category h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--color-text);
+  }
+
+  .skills-category h3 i {
+    color: var(--color-primary);
+  }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .skill-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 1.5rem 1rem;
+    text-align: center;
+    transition:
+      transform var(--transition-fast),
+      box-shadow var(--transition-fast);
+  }
+
+  .skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .skill-card i {
+    font-size: 2.5rem;
+  }
+
+  .skill-card span {
+    font-size: 0.85rem;
+    font-weight: 500;
+  }
+
+  .ai-skills-list {
+    padding: 2rem;
+    height: 100%;
+  }
+
+  .ai-skills-list ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .ai-skills-list li {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.1rem;
+    color: var(--color-text-muted);
+  }
+
+  .ai-skills-list i {
+    color: var(--color-accent);
+    font-size: 1.5rem;
+  }
+
+  @media (max-width: 992px) {
+    .skills-wrapper {
+      grid-template-columns: 1fr;
+    }
+
+    .ai-skills-list {
+      height: auto;
+    }
+  }
+</style>
